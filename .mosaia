@@ -1,0 +1,33 @@
+{
+    "name": "Echo3AI",
+    "description": "Chatified Version of my project with MongoDB natural language podcast search.",
+    "schema": {
+        "type": "function",
+        "function": {
+            "name": "Echo3AI",
+            "description": "Chatified version of Echo3AI. Supports MongoDB access, IPFS pinning, Metamask payments, and natural language podcast search via chat. Use mode 'podcast_nl' and input like 'fetch me Vijay Mallya podcast details' to search the podcasts collection.",
+            "strict": true,
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "mode": {
+                        "type": "string",
+                        "description": "Operation mode: 'podcast_nl' for natural language podcast search, 'mongo' for direct MongoDB query, or other modes."
+                    },
+                    "input": {
+                        "type": "string",
+                        "description": "User's natural language request (for 'podcast_nl') or JSON string for direct MongoDB query (for 'mongo')."
+                    }
+                },
+                "required": [
+                    "mode",
+                    "input"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "envVars": [
+        "MONGODB_URI"
+    ]
+}
